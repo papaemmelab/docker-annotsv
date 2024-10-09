@@ -16,12 +16,12 @@ RUN apt update && \
         pigz
 
 ENV BEDTOOLS_INSTALL_DIR=/opt/bedtools2
-ENV BEDTOOLS_VERSION=2.31.1
+ENV BEDTOOLS_VERSION=2.31.0
 RUN mkdir $BEDTOOLS_INSTALL_DIR
 
 WORKDIR /opt/bedtools2
-RUN wget https://github.com/arq5x/bedtools2/releases/download/v$BEDTOOLS_VERSION/bedtools.static.binary && \
-    mv bedtools.static.binary bedtools && \
+RUN wget https://github.com/arq5x/bedtools2/releases/download/v$BEDTOOLS_VERSION/bedtools.static && \
+    mv bedtools.static bedtools && \
     chmod a+x bedtools && \
     ln -s $BEDTOOLS_INSTALL_DIR/bedtools /usr/bin
 
@@ -31,7 +31,7 @@ RUN git clone --branch $SAMTOOLS_VERSION --recurse-submodules https://github.com
     git clone --branch $SAMTOOLS_VERSION https://github.com/samtools/bcftools.git
 
 WORKDIR /opt/bcftools
-RUN make && ln
+RUN make && ln -s /opt/bcftools/bcftools /usr/bin
 
 ENV ANNOTSV_INSTALL_DIR=/opt/AnnotSV
 ENV ANNOTSV_VERSION=3.4.4
