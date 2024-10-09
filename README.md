@@ -1,6 +1,6 @@
 # AnnotSV Docker Image
 
-This repository contains a Dockerfile for building a Docker image with AnnotSV version 3.4.4 and its dependencies.
+This repository contains a Dockerfile for building a Docker image with [AnnotSV](https://github.com/lgmgeo/AnnotSV) version 3.4.4 and its dependencies.
 For more information on using AnnotSV, please refer to the [official AnnotSV documentation](https://lbgi.fr/AnnotSV/Documentation/README.AnnotSV_latest.pdf).
 
 🐋 Docker Image: [docker://papaemmelab/annotsv:3.4.4](https://hub.docker.com/r/papaemmelab/annotsv/tags)
